@@ -1,0 +1,17 @@
+const users = [
+  {
+    name: "John Doe",
+    age: 30,
+    email: "john.doe@example.com",
+  },
+  {
+    name: "Jane Smith",
+    age: 25,
+    email: "jane.smith@example.com",
+  },
+  {
+    name: "Alice Johnson",
+    age: 28,
+    email: "alice.johnson@example.com",
+  },
+];
