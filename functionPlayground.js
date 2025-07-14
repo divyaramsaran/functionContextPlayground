@@ -15,3 +15,14 @@ const users = [
     email: "alice.johnson@example.com",
   },
 ];
+
+const chooseFunction = () => {
+  console.log("1.apply, \n2.bind \n3.call");
+  const input = prompt(`Enter a function to apply`);
+  if (isNaN(Number(input))) {
+    console.log("Enter valid function number");
+
+    return chooseFunction();
+  }
+  return input;
+};
