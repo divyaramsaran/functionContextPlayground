@@ -26,3 +26,11 @@ const chooseFunction = () => {
   }
   return input;
 };
+
+const applyFunction = (func, context, args) => {
+  if (typeof func !== "function") {
+    console.error("Provided argument is not a function");
+    return;
+  }
+  return func.apply(context, args);
+};
