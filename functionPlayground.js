@@ -42,3 +42,11 @@ const bindFunction = (func, context, ...args) => {
   }
   return func.bind(context, ...args);
 };
+
+const callFunction = (func, context, ...args) => {
+  if (typeof func !== "function") {
+    console.error("Provided argument is not a function");
+    return;
+  }
+  return func.call(context, ...args);
+}
