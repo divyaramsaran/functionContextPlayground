@@ -34,3 +34,11 @@ const applyFunction = (func, context, args) => {
   }
   return func.apply(context, args);
 };
+
+const bindFunction = (func, context, ...args) => {
+  if (typeof func !== "function") {
+    console.error("Provided argument is not a function");
+    return;
+  }
+  return func.bind(context, ...args);
+};
