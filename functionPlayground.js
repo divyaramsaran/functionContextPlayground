@@ -49,4 +49,33 @@ const callFunction = (func, context, ...args) => {
     return;
   }
   return func.call(context, ...args);
-}
+};
+
+const argumentFunction = function (greeting) {
+  return `${greeting}, my name is ${this.name} and I am ${this.age} years old. You can contact me at ${this.email}.`;
+};
+
+const main = () => {
+  const input = chooseFunction();
+  const user = users[0]; // Using the first user for demonstration
+
+  switch (input) {
+    case "1":
+      console.log("Using apply:");
+      console.log(applyFunction(argumentFunction, user, ["Hello"]));
+      break;
+    case "2":
+      console.log("Using bind:");
+      const boundFunc = bindFunction(argumentFunction, user);
+      console.log(boundFunc("Hi"));
+      break;
+    case "3":
+      console.log("Using call:");
+      console.log(callFunction(argumentFunction, user, "Hey"));
+      break;
+    default:
+      console.error("Invalid choice. Please enter 1, 2, or 3.");
+  }
+};
+
+main();
